@@ -1,3 +1,5 @@
 # BlackBIS
 
-My solutions to the BlackBIS classroom for the army.
+My solutions to the BlackBIS google classroom. 
+
+Hello *Gerry Hamburgery*🍔 and *Oded Paz*🌟.
