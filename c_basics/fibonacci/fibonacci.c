@@ -24,7 +24,9 @@
 
 unsigned int find_nth_fibonacci(int n)
 {
-    return 0;
+    if (n==0 || n==1)
+        return 1;
+    return find_nth_fibonacci(n-2) + find_nth_fibonacci(n-1);
 }
 
 int main(int argc, char * argv[])
@@ -42,11 +44,11 @@ int main(int argc, char * argv[])
     }
 
     // parse the input into number
-    n = stoi(argv[1]);
+    n = atoi(argv[1]);
 
     num = find_nth_fibonacci(n);
 
-    printf("The %d'th number of fibonacci sequence is %u.\n", n, word_count);
+    printf("The %d'th number of fibonacci sequence is %u.\n", n, num);
 
 	return 0;
 }
