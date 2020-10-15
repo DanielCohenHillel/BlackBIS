@@ -1,7 +1,7 @@
 /**
  * @file word_count.c
  * @version 1.0
- * @author ????????
+ * @author Daniel Cohen Hillel, ID: 212553804
  *
  * @brief program that print how many words are in a given file.
  *
@@ -19,6 +19,7 @@
 // ------------------------------ includes ------------------------------
 #include <stdio.h>
 #include <stdlib.h>
+#include <regex.h>
 
 // ------------------------------ functions -----------------------------
 int main(int argc, char * argv[])
@@ -31,9 +32,18 @@ int main(int argc, char * argv[])
         return EXIT_FAILURE;
     }
 
-    // open the file and count how many word are in it.
+    // open the file
+    char buff[255];
+    FILE *fp;
+    fp = fopen(argv[1], "r");
 
-    printf("The file %s contain %u words.\n", argv[1], word_count);
+    // loop over all the words
+    while (fscanf(fp, "%s", buff)==1)
+        word_count++;
+
+    fclose(fp);
+
+    printf("The file %s contains \33[35m%zu\33[0m words.\n", argv[1], word_count);
 
 	return 0;
 }
